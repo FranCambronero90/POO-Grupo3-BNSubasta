@@ -1,16 +1,19 @@
-/*
- *
- */
 package com.ucreativa;
 
 /**
- *
+ * Esta es la clase abstracta que define la estructura de bienes del sistema de subastas.
+ * 
+ * @author Gabriel Ruiz
  * @author Raul Espinoza
+ * @author Francisco Cambronero
  */
 public abstract class Bien {
     private String id;
     private double precio;
 
+    public Bien(){
+    }
+    
     public Bien(String id, double precio) {
         this.id = id;
         this.precio = precio;

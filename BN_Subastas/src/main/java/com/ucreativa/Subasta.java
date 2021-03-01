@@ -3,27 +3,20 @@
  */
 package com.ucreativa;
 
+
 import java.util.List;
 
 /**
- *
+ * Esta es la interfase que especifica la estructura de subastas.
+ * 
+ * @author Gabriel Ruiz
  * @author Raul Espinoza
+ * @author Francisco Cambronero
  */
-public class Subasta {
-    private Bien bienSubastado;
-    private List<Puja> listaDePujas;
-
-    public Subasta(Bien bienSubastado) {
-        this.bienSubastado = bienSubastado;
-    }
+public interface Subasta {
+    public static Bien bienSubastado = null;
+    public static List<Puja> listaDePujas = null;
     
-    public void recibirPuja(String usuario, boolean acuerdosFirmados, boolean asistenciaColaborador, boolean sennialTratoDepositada, double montoSennialTrato){
-        Puja puja = new Puja(usuario, bienSubastado.getId(), acuerdosFirmados, asistenciaColaborador, sennialTratoDepositada, montoSennialTrato);
-        listaDePujas.add(puja);
-    }
+    public void recibirPuja(Puja puja);
     
-    @Override
-    public String toString(){
-        return "Subasta: Esta es la subasta del bien " + bienSubastado.getId() + ".";
-    }
 }

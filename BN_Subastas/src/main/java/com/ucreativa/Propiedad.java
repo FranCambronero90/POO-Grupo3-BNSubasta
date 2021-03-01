@@ -1,11 +1,11 @@
-/*
- *
- */
 package com.ucreativa;
 
 /**
- *
+ * Esta es la clase que define la propiedad (un bien inmueble) en el sistema de subastas.
+ * 
+ * @author Gabriel Ruiz
  * @author Raul Espinoza
+ * @author Francisco Cambronero
  */
 public class Propiedad extends Bien{
     
@@ -38,7 +38,7 @@ public class Propiedad extends Bien{
 
     public boolean registrar(){
         try{
-            //Guardar propiedad
+            Repo.BienRepo.propiedades.add(this);
             return true;
         }catch(Exception e){
             return false;
@@ -135,6 +135,6 @@ public class Propiedad extends Bien{
     
     @Override
     public String toString(){
-        return "Propiedad: Esta es la propiedad " + super.getId() + ", ubicada en " + provincia + ", " + canton + ", " + distrito + " y tiene un tamannio de " + tamanno + ". Estado actual: " + estado + ".";
+        return "Propiedad: Esta es la propiedad " + super.getId() + ", ubicada en " + provincia + ", " + canton + ", " + distrito + " y tiene un tamannio de " + tamanno + ". Estado actual: " + estado + "." + getId();
     }
 }
